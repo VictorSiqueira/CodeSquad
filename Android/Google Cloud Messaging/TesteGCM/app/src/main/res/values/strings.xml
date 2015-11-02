@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TesteGCM</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="project_id">632983240582</string>
+    <string name="server_url">http://algumserver/gcm/register</string>
+</resources>
