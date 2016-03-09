@@ -10,7 +10,6 @@
     <access origin="*"/>
 
     <preference name="permissions" value="INTERNET" />
-    <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="false" />
     <preference name="android-minSdkVersion" value="7" />
