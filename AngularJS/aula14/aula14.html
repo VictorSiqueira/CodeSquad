@@ -1,0 +1,63 @@
+<!--Usando POST -->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 14 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+       
+        .css-form input.ng-invalid.ng-touched{
+            background-color:#FA787E;
+        }
+
+        .css-form input.ng-valid.ng-touched{
+            background-color:#78FA89;
+        }
+    </style>
+<body>
+   
+   <!--Um sistema de validação obrigatoriamente deve retornar true ou false
+    -->
+    <div ng-controller="formularioController">
+      <h1>Formulário</h1>
+      <form name="form" ng-submit="salvar()" class="css-form">
+        
+          Nome: <input type="text" name="nome" ng-model="formulario.nome" required> <br>
+              <div ng-show="form.$submitted || form.nome.$touched">
+                  <ul>
+                      <li ng-show="form.nome.$error.required">Este campo é obrigatório</li>
+                  </ul>
+              </div>
+          Email: <input type="email" name="email" ng-model="formulario.email" required> <br>
+              <div ng-show="form.$submitted || form.email.$touched">
+                  <ul>
+                      <li ng-show="form.email.$error.required">Este campo é obrigatório</li>
+                      <li ng-show="form.email.$error.email">Isso não é um email</li>
+                  </ul>
+              </div>
+          Genero: <input type="radio" value="masculino" ng-model="formulario.genero"> <br>
+                  <input type="radio" value="feminino" ng-model="formulario.genero"> <br>
+                  
+            Idade: <input type="number" name="idade" min="13" idade ng-model="idadeModel"><br>
+                <div ng-show="form.$submitted || form.idade.$touched">
+                  <ul>
+                      <li ng-show="form.idade.$error.idade">Voce precisa ter mais que 13 anos</li>
+                  </ul>
+                </div>
+            <input type="button" value="Reset" ng-click="reset">
+            <input type="submit" value="Salvar" ng-disabled="form.$invalid">
+      </form>
+      <hr>
+      
+      
+      <pre>
+          {{formulario}}
+      </pre>
+      <pre>
+          {{salvo}}
+      </pre>
+    </div>
+</body>
+</html>

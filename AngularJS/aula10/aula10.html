@@ -1,0 +1,43 @@
+<!--10 Diretivas mais usadas-->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 10 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+<body>
+    <div ng-controller="diretivasController">
+       <ul >
+          <li>ng-app: Serve para declarar qual o modulo que vai ser usado na aplicação</li>
+          <li>ng-model: Serve para declarar os modos que vao ser usados</li>
+          <li>ng-controller: Serve para especificar que dentro do elemento que está marcado, haverão uma série de comandos</li>
+          <li>ng-bind: è utilizado no lugar das expressões que no meio vai o nome do model, {{model}} </li>
+          <li>ng-class: Serve para aplicar classes css</li>
+          <li>ng-show: Serve para mostrar ou não o elemento marcado</li>
+          <li>ng-hide: Serve para esconder ou não o elemento marcado</li>
+          <li>ng-repeat: serve para criar um loop</li>
+          <li>ng-src e ng-href</li>
+          <li>ng-{evento}: é onde vai um evento do DOM
+              <ul>
+                  <li>ng-blur</li>
+                  <li>ng-change</li>
+                  <li ng-click="mouseclick()">ng-click</li>
+                  <li ng-dblclick="mouseclick()">ng-dblclick</li>
+                  <li>ng-focus</li>
+                  <li >ng-keydown: <input type="text" ng-keydown="kdown()"></li>
+                  <li>ng-keypress</li>
+                  <li>ng-keyup</li>
+                  <li>ng-mousedown</li>
+                  <li>ng-mouseup</li>
+                  <li ng-mouseenter="mouseenter()">ng-mouseenter</li>
+                  <li>ng-mouseleave</li>
+                  <li>ng-mousemove</li>
+                  <li>ng-mouseover</li>
+                  <li>ng-submit</li>
+              </ul>
+          </li>
+       </ul>
+    </div>
+</body>
+</html>

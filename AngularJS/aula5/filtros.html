@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Filtros">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 5 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    
+    <!-- Para poder criar in-line os modulos precisa obrigatoriamente criar o modulo, não da para chamar os escopos sem ele, da erro -->
+    <script >
+        var filtros = angular.module('Filtros', []);
+        filtros.controller('filtrosController', function ($scope){
+        $scope.numero = 100;
+        })
+        
+    </script>
+</head>
+<body>
+    <p ng-controller="filtrosController">
+        {{numero | number:2}} <!--coloca 2 casas decimais-->
+        {{numero | currency:"R$":3}} <!--por default vem dolar mas defino seu eu quiser qual o simbolo que eu quero por, mas o parametro deve ser string, para o segundo parametro é numero pois ele define as casas decimais, e senmpre divido os parametros com 2 pontos-->
+        
+        {{texto | lowercase}}
+    </p>
+</body>
+</html>

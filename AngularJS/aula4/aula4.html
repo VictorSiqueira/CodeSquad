@@ -1,0 +1,27 @@
+<!--Manipulando Listas -->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 4 - Angular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="listaController">
+       <!--foreach em angular-->
+        <ul ng-repeat="tarefa in tarefas">
+            <li>
+                {{tarefa.prioridade}} - {{tarefa.nome}} - <a href="" ng-click="remover($index)">Remover</a>
+            </li>
+        </ul>
+        <hr>
+        <form>
+            Nome: <input type="text" ng-model="t.nome">
+            <!-- quando ponho um ponto apos o nome do model quer dizer que estopu me referindo a propiedade de um obejto -->
+            Prioridade: <input type="text" ng-model="t.prioridade">
+            <button ng-click="adicionar(t)">Adicionar</button>
+        </form>
+    </div>
+</body>
+</html>

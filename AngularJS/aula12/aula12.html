@@ -1,0 +1,82 @@
+<!--Formularios e Validações - tratando validaçoes -->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 12 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style type="text/css">
+       
+        .css-form input.ng-invalid.ng-touched{
+            background-color:#FA787E;
+        }
+
+        .css-form input.ng-valid.ng-touched{
+            background-color:#78FA89;
+        }
+    </style>
+<body>
+    <div ng-controller="formularioController">
+      <h1>Formulário</h1>
+      <!--é necessario dar um nome ao elemento html para poder recuperar o estado dele, no caso aqui chamou ele de form-->
+      <form name="form" ng-submit="salvar()" class="css-form">
+        
+          Nome: <input type="text" name="nome" ng-model="formulario.nome" required> <br>
+              <div ng-show="form.$submitted || form.nome.$touched">
+                  <ul>
+                      <li ng-show="form.nome.$error.required">Este campo é obrigatório</li>
+                  </ul>
+              </div>
+          Email: <input type="email" name="email" ng-model="formulario.email" required> <br>
+          <div ng-show="form.$submitted || form.email.$touched">
+                  <ul>
+                      <li ng-show="form.email.$error.required">Este campo é obrigatório</li>
+                      <li ng-show="form.email.$error.email">Isso não é um email</li>
+                      
+                      <!--
+                         Erros no formulario - É um objeto hash (que tem indentificador), 
+                         que contém referências a controles ou formulários com validadores falhando, 
+                         onde : 
+                            * chaves são os tokens de validação (nomes de erro )
+                            * os valores são arrays de controles ou formulários que têm um validador negativo para o nome de erro.
+                         
+                           Erros que são possiveis capturar no formulario
+                            * email
+                            * max
+                            * maxlength
+                            * min
+                            * minlength
+                            * number
+                            * pattern
+                            * required
+                            * url
+                            * date
+                            * datetimelocal
+                            * time
+                            * week
+                            * month
+                    -->
+    
+                  </ul>
+              </div>
+          Genero: <input type="radio" value="masculino" ng-model="formulario.genero"> <br>
+                  <input type="radio" value="feminino" ng-model="formulario.genero"> <br>
+            <input type="button" value="Reset" ng-click="reset">
+            <!--em ng-disable é a mesma coisa que disable html, mas nele eu posso passar um valor
+                * posso por true ou falseno valor
+                * posso por o estado do formulario (form.$invalid),
+                que se altera quando todos os campos obrigatórios forem preencshiopsa
+                -->
+            <input type="submit" value="Salvar" ng-disable="form.$invalid">
+      </form>
+      <hr>
+      <pre>
+          {{formulario}}
+      </pre>
+      <pre>
+          {{salvo}}
+      </pre>
+    </div>
+</body>
+</html>

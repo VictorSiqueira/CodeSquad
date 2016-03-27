@@ -1,0 +1,27 @@
+<!--Percorrendo lista -->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 3 - Angular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="listaController">
+       <!--foreach em angular-->
+        <ul ng-repeat="tarefa in tarefas">
+            <li>
+                {{tarefa.prioridade}} - {{tarefa.nome}}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+<!--
+TWO Way data binding - Atualizar a model e a view
+HMVC - um Mvc dentro de uma arquitetura dentro de um modulo
+
+-->

@@ -1,0 +1,30 @@
+<!--Criando Diretivas -->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 8 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+<body>
+    <div ng-controller="listaController">
+       <ul ng-repeat="tarefa in tarefas">
+           <li>
+               {{tarefa.nome}} - {{tarefa.prioridade}}
+           </li>
+       </ul>
+       
+       <hr>
+       
+       <ul >
+          <!--o ng-repeat cria o loop no elemento, por isso ele fica agora no li pq senão ele vai reptir a ul -->
+           <li my-tarefas ng-repeat="tarefa in tarefas"></li>
+       </ul>
+       
+       <ul ng-repeat="tarefa in tarefas">
+           <li my-template type="nome"></li><!--setando o typo para ser passado para a diretiva-->
+           <li my-template type="prioridade"></li>
+       </ul>
+    </div>
+</body>
+</html>

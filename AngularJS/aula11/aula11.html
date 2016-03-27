@@ -1,0 +1,56 @@
+<!--Formularios e Validações-->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 11 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+    
+    
+    
+    <!--Classes usadas nos campos dos formulario
+        * ng-valid: o modelo é valido
+        * ng-invalid: p modelo é invalido
+        * ng-valid-[key]: para cada tecla adicionada por $setValidity
+        * ng-invalid-[key]: para cada tecla adicionada por $setValidity
+        * ng-pristine: o campo não recebeu interação ainda
+        * ng-dirty: o campo já recebeu interação
+        * ng-touched: o campo não foi selecionado ainda
+        * ng-untouched: o campo já foi selecionado
+        * ng-pending: qualquer pendecia do $asyncValidators
+    -->
+    
+    <style type="text/css">
+        /*Irá alterar a cor do campo para vermelho caso seja invalido, quando for selecionado*/
+        .css-form input.ng-invalid.ng-touched{
+            background-color:#FA787E;
+        }
+         /*Irá alterar a cor do campo para verde caso seja valido, quando for selecionado*/
+        .css-form input.ng-valid.ng-touched{
+            background-color:#FA787E;
+        }
+    </style>
+<body>
+    <div ng-controller="formularioController">
+      <h1>Formulário</h1>
+      <form ng-submit="salvar()" class="css-form"> 
+         <!-- caso seja colocado o atributo "novalidate" na tag "form",ele dispensa o campo que for preenchido incorretamente na hora do envio-->
+         <!-- Por default todos os campos ja vem como valid, caso tenha o atributo "required" no campo, ele vira como invalid -->
+          Nome: <input type="text" ng-model="formulario.nome"> <br>
+          Email: <input type="email" ng-model="formulario.email"> <br> <!--o propio angular verifica se o email é valido-->
+          Genero: <input type="radio" value="masculino" ng-model="formulario.genero"> <br>
+                  <input type="radio" value="feminino" ng-model="formulario.genero"> <br>
+            <input type="button" value="Reset" ng-click="reset">
+            <input type="submit" value="Salvar">
+      </form>
+      <hr>
+      <pre>
+          {{formulario}}
+      </pre>
+      <pre>
+          {{salvo}}
+      </pre>
+    </div>
+</body>
+</html>

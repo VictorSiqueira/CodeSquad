@@ -1,0 +1,41 @@
+<!--Criando os proprios filtros -->
+<!DOCTYPE html>
+<html lang="en" ng-app="Filtros">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 6 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    
+    <!-- Para poder criar in-line os modulos precisa obrigatoriamente criar o modulo, não da para chamar os escopos sem ele, da erro -->
+    <script >
+        var filtrosModule = angular.module('Filtros', []);
+        filtrosModule.filter('reverse', function () {
+            return function(input, lowercase, end){
+                input = input || ''; // if(input!=null){input.value(input)} else {input.value('')}
+                out = ''; // valor que vai retornar para a view
+                for(var i = 0; i < input.length; i++){
+                    out = input.charAt(i) + out; //pega a posição do index e poe o restante depois
+                }
+                
+                if(lowercase){
+                    out = out.toLowerCase();
+                }
+                
+                end = end || '';
+                return out+end;
+            }
+        });
+        filtrosModule.controller('filtrosController', function ($scope){
+            $scope.texto = "Victor Siqueira";
+        })
+        
+    </script>
+</head>
+<body>
+    <p ng-controller="filtrosController">
+        {{texto}} <br>
+        {{texto | reverse}} <br>
+        {{texto | reverse:true:''}}
+    </p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- Usando Route -->
+<!-- Mudei o nome do arquivo pq somente como index ele funcionou -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <!-- com  a utilização do Require.js fica dispensado a declaração dos JS, pois ele faz isso para vc -->
+     <!-- Quando se utiliza require, sempre oculta a extensão, no caso desse é um .js -->
+    <script data-main="app" src="js/require.js"></script>
+</head>
+<body class="container">
+   <div class="jumbotron">
+    <h1>Minha Aplicação</h1>
+    </div>
+    <div class="row">
+    	<div ng-view class="col-md-9"></div>
+    	<div class="col-md-3" ef-tarefas></div>
+    </div>
+    
+    <hr>
+    
+    <ul class="nav">
+        <li><a href="#/usuarios">Usuarios</a></li>
+    </ul>
+    
+</body>
+</html>

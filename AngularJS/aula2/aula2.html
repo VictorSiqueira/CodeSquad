@@ -1,0 +1,25 @@
+<!-- Conhecendo AngularJS -->
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso de AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    
+</head>
+<body>
+   Nome: <input type="text" ng-model="nome"><br>
+   <hr>
+   <h3>Olá, {{nome}}</h3>
+</body>
+</html>
+
+
+<!--
+Se fosse em Jquery
+$("input").keypress(function()){
+    var model = '';
+    model = $(this).value();
+    $('span').text(model); // precisaria por um span no html
+}
+-->

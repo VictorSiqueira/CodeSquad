@@ -1,0 +1,8 @@
+<h2>Criando o usuario</h2>
+<form name="formNovo" novalidate ng-submit="novo()">
+    Nome: <input ng-model="usuario.nome" type="text" required> <br>
+    Sobrenome: <input ng-model="usuario.sobrenome" type="text" required><br>
+    Email: <input ng-model="usuario.email" type="email" required><br>
+    Senha: <input ng-model="usuario.senha" type="password" required><br>
+    <input ng-disabled="formNovo.$invalid" type="submit">
+</form>

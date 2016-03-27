@@ -1,0 +1,35 @@
+<!--Conhecendo Diretivas -->
+<!-- diretiva servem para manipular o DOM (Document Object Model) da pagina ou trazem alguma informção do controller para qa pagina, mas manipulando o Dom da mesma forma-->
+ <!-- uma diretiva pode ser um atributo html, um elemento html e classes html(parecida com classes css)-->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 7 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="diretivasController">
+        {{developer}} <br><!-- modo comum, enquanto o angular nao carrega vai apareecer a tag-->
+        <span ng-bind="developer"></span><br><!-- pondo no span vai ficar um campo vazio enquanto não carrega o angular-->
+        
+        <hr>
+        <input type="checkbox" ng-model="mostrar">
+            <div ng-show="mostrar">
+                <span ng-bind="developer"></span>
+            </div>
+            <div ng-hide="mostrar">
+                Com directiva hide
+            </div>
+            <hr>
+            <!--formas de declarar uma diretiva-->
+            <span ng-bind="developer"></span> <!--mais usada-->
+            <span ng:bind="developer"></span>
+            <span ng_bind="developer"></span>
+            <span data-ng-bind="developer"></span>
+            <span x-ng-bind="developer"></span>
+        </input>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!--Tipos de Diretivas -->
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 9 - AngularJS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+<body>
+    <div ng-controller="listaController">
+       <ul >
+          <!--Pode-se usar de 3 formas as diretivas -->
+          <!--Como elemento -->
+           <li ng-repeat="tarefa in tarefas" >
+               <my-tarefas></my-tarefas>
+           </li>
+           
+           <hr>
+           <!--Como atributo -->
+           <li ng-repeat="tarefa in tarefas" my-tarefas >
+           </li>
+           
+           
+            <hr>
+           <!--Como atributo -->
+           <li ng-repeat="tarefa in tarefas" class="my-tarefas" >
+           </li>
+           
+       </ul>
+
+    </div>
+</body>
+</html>
